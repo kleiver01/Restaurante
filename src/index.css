@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+
+  /* Paleta vibrante */
+  --color-primary-from: #ff6b35;
+  --color-primary-to: #ff3d00;
+  --color-secondary: #121212;
+  --color-dark: rgb(24, 24, 27);
+  --color-accent: #ffd166;
+  --color-glow: rgba(255,107,53,0.22);
+  --color-text: #ffffff;
+  --muted: #9aa3a8;
+
+  color: rgba(255, 255, 255, 0.95);
+  background-color: #070707;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* soft, lively background with subtle texture feel */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-image: radial-gradient(circle at 10% 20%, rgba(255,107,53,0.03), transparent 8%),
+                    radial-gradient(circle at 90% 80%, rgba(255,61,0,0.02), transparent 12%),
+                    linear-gradient(180deg, rgba(10,10,10,1) 0%, rgba(5,5,5,1) 100%);
+  background-attachment: fixed;
+  color: var(--color-text);
+}
+
+a {
+  font-weight: 600;
+  color: var(--color-primary-from);
+  text-decoration: none;
+  transition: color 0.25s ease, transform 0.2s ease;
+}
+a:hover {
+  color: var(--color-primary-to);
+  transform: translateY(-2px);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 3.2rem;
+  line-height: 1.05;
+  text-rendering: optimizeLegibility;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+/* gradient text utility */
+.gradient-text {
+  background: linear-gradient(90deg, var(--color-primary-from), var(--color-primary-to));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+button {
+  border-radius: 10px;
+  border: none;
+  padding: 0.8em 1.6em;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+/* subtle focus ring */
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 6px rgba(255,107,53,0.08);
+}
+
+/* small utility for glowing effect */
+.glow {
+  box-shadow: 0 8px 30px var(--color-glow);
+}
+
+/* Section background alternation utilities */
+.section--dark {
+  background-color: #000; /* pure black sections */
+}
+
+.section--gray {
+  background-color: var(--color-dark);
+}
+
+/* Force section titles to white */
+.section-title {
+  color: #ffffff !important;
+}
+
+/* Ensure section padding keeps consistent contrast */
+.section--dark .section-subtitle,
+.section--gray .section-subtitle {
+  color: #9aa3a8;
+}
